@@ -1,0 +1,9 @@
+Create a form and map this workflow to it.
+Every time user fills in a form, the script in this workflow captures the details filled by user.
+Based on the values filled in a text filled or selected from a dropdown, we can identify these values in our script and can perform a condition based logic to route the workflows to the respective flow.
+One key point to note here is to identify the form field index that needs to be checked. I am using the following condition to do this in the script:
+    String stateVal = assetRenderer.getAssetObject().getDDMFormValues().getDDMFormFieldValues()[0].getValue().getString(Locale.ENGLISH);
+I am using a "0" here beacuse I am checking for the value user enters in the first field of a form. 
+Similarly it can be done for any of the form fields even in a multi-page form.
+For instance, if there are 20 fields in a form and I want to configure workflow based on the the 10th form field, I will use "[9]" in step5. (Index starts from 0, hence minus 1).
+Please configure and change the user and roles that this workflow script routes to as per your system.
